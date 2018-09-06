@@ -74,10 +74,7 @@ class App(Frame):
 
         canvas.create_text(200, 160, font="Times 45 bold", fill="darkred", text="GAME OVER")
 
-        canvas.create_text(200, 250, font="Times 20 bold", fill="green", text="Want to play again?")
-        canvas.create_text(200, 290, font="Helvetica 30 italic bold", \
-                           fill="green", activefill="blue", text="Click Here!")
-        canvas.bind("<Button-1>", self.playagain)
+        canvas.create_text(200, 240, font="Times 30 bold", fill="green", text="Want to play again?")
 
     def kreator(self):
         for i in range(8):
@@ -105,34 +102,12 @@ class App(Frame):
             canvas.unbind("<Button-1>")
             canvas.unbind("<Button-3>")
             canvas.create_text(200, 100, font="Helvetica 50 bold", fill="yellow", text="YOU WIN")
-            canvas.create_text(200, 250, font="Times 20 bold", fill="green", text="Want to play again?")
-            canvas.create_text(200, 290, font="Helvetica 30 italic bold",\
-                                   fill="green", activefill="blue", text="Click Here!")
-            canvas.bind("<Button-1>", self.playagain)
+            canvas.create_text(200, 240, font="Times 30 bold", fill="green", text="Want to play again?")
 
 
     def nothing(self, number, x, y):
         canvas.create_image(x*50+25, y*50+25, image=numbers[number])
 
-    def playagain(self, event):
-
-        if event.x>90 and event.x<310 and event.y>270 and event.y<310:
-            canvas.delete("all")
-        canvas.unbind("<Button-1>")
-        global lista
-        global znaczniki
-        global clicked
-        global bomby
-        lista = []
-        znaczniki = []
-        clicked = []
-        bomby = []
-        for i in range(8):
-            for j in range(8):
-                canvas.create_image(50*i+25, 50*j+25, image=background)
-
-        self.kreator()
-        canvas.bind("<Button-1>", self.generator)
 
 
     def generator(self, event):
@@ -140,7 +115,7 @@ class App(Frame):
         canvas.unbind("<Button-1>")
         for i in range(10):
             z = random.randint(1, len(lista)-1)
-            while lista[z] == [x, y]:
+            while lista[z] == [x, y] or lista[z] in bomby:
                 z = random.randint(1, len(lista) - 1)
             bomby.append(lista[z])
         self.click(event)
