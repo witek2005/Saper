@@ -1,4 +1,4 @@
-from tkinter import *
+./iconsfrom tkinter import *
 from time import sleep
 import random
 tk = Tk()
@@ -18,21 +18,21 @@ bomby = []
 lista = []
 clicked = []
 znaczniki = []
-bomb = PhotoImage(file="/home/witek/Obrazy/icons/games/bomb.png")
-explode = PhotoImage(file="/home/witek/Obrazy/icons/games/boom.png")
-warning = PhotoImage(file="/home/witek/Obrazy/security2.png")
-photo = PhotoImage(file="/home/witek/Obrazy/icons/games/zero.png")
-background = PhotoImage(file="/home/witek/Obrazy/icons/games/Background.png")
+bomb = PhotoImage(file="./icons/bomb.png")
+explode = PhotoImage(file="./icons/boom.png")
+warning = PhotoImage(file="./icons/security2.png")
+photo = PhotoImage(file="./icons/numbers/zero.png")
+background = PhotoImage(file="./icons/Background.png")
 numbers = {
-    0 : PhotoImage(file="/home/witek/Obrazy/icons/games/zero.png"),
-    1 : PhotoImage(file="/home/witek/Obrazy/icons/games/1.png"),
-    2 : PhotoImage(file="/home/witek/Obrazy/icons/games/2.png"),
-    3 : PhotoImage(file="/home/witek/Obrazy/icons/games/3.png"),
-    4 : PhotoImage(file="/home/witek/Obrazy/icons/games/4.png"),
-    5 : PhotoImage(file="/home/witek/Obrazy/icons/games/5.png"),
-    6 : PhotoImage(file="/home/witek/Obrazy/icons/games/6.png"),
-    7 : PhotoImage(file="/home/witek/Obrazy/icons/games/7.png"),
-    8 : PhotoImage(file="/home/witek/Obrazy/icons/games/8.png")}
+    0 : PhotoImage(file="./icons/numbers/zero.png"),
+    1 : PhotoImage(file="./icons/numbers/1.png"),
+    2 : PhotoImage(file="./icons/numbers/2.png"),
+    3 : PhotoImage(file="./icons/numbers/3.png"),
+    4 : PhotoImage(file="./icons/numbers/4.png"),
+    5 : PhotoImage(file="./icons/numbers/5.png"),
+    6 : PhotoImage(file="./icons/numbers/6.png"),
+    7 : PhotoImage(file="./icons/numbers/7.png"),
+    8 : PhotoImage(file="./icons/numbers/8.png")}
 
 class App(Frame):
     def __init__(self, master):
